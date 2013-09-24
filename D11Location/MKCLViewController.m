@@ -8,11 +8,12 @@
 
 #import "MKCLViewController.h"
 #import <CoreLocation/CoreLocation.h>
-#import "MKCLAnnotation.h" // annotation for item
-#import "MKCLAnnotationView.h"
-#import "MKCLMapItem.h"
 
-@interface MKCLViewController ()
+@interface MKCLViewController (){
+    __weak IBOutlet MKMapView *mapView;
+    __weak IBOutlet UILabel *titleLabel;
+    int counter;
+}
 
 @end
 
@@ -23,35 +24,45 @@
 {
     [super viewDidLoad];
     
-    // create an array of annotations
-    _annotations = [[NSMutableArray alloc] initWithCapacity:1];
+    counter = 0;
     
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.679582, -122.387661);
+    // set a starting location
+    _startLocation = [[MKCLAnnotation alloc] initWithCoordinates:CLLocationCoordinate2DMake(47.623543, -122.335812) placeName:@"You Are Here" description:@"511 Boren Ave"];
     
+    // create an array for annotations
+    _annotations = [NSMutableArray new];
+    // create some annotations to display and add them to the array - Food Banks
+    MKCLAnnotation *ballardFoodBank = [[MKCLAnnotation alloc] initWithCoordinates:CLLocationCoordinate2DMake(47.679582, -122.387661) placeName:@"Ballard Food Bank" description:nil];
+    MKCLAnnotation *beaconFoodBank = [[MKCLAnnotation alloc] initWithCoordinates:CLLocationCoordinate2DMake(47.546769, -122.300331) placeName:@"Beacon Avenue Food Bank" description:nil];
+    MKCLAnnotation *blessedSacramentFoodBank = [[MKCLAnnotation alloc] initWithCoordinates:CLLocationCoordinate2DMake(47.665359, -122.319416) placeName:@"Blessed Sacrament Food Bank" description:nil];
+    MKCLAnnotation *centerstoneFoodBank = [[MKCLAnnotation alloc] initWithCoordinates:CLLocationCoordinate2DMake(47.625456, -122.308541) placeName:@"Centerstone" description:nil];
+    MKCLAnnotation *asianFoodBank = [[MKCLAnnotation alloc] initWithCoordinates:CLLocationCoordinate2DMake(47.596483, -122.322334) placeName:@"Asian Counseling and Referral Services" description:nil];
     
-    MKCLAnnotation *anno = [[MKCLAnnotation alloc] initWithCoordinates:coordinate placeName:@"Ballard Food Bank" description:@"something here"];
+    // add locations to array
+    [_annotations addObject:ballardFoodBank];
+    [_annotations addObject:beaconFoodBank];
+    [_annotations addObject:blessedSacramentFoodBank];
+    [_annotations addObject:centerstoneFoodBank];
+    [_annotations addObject:asianFoodBank];
     
-    [_annotations insertObject:anno atIndex:0];
+    //    NSLog(@"Object name in array: %@", _annotations[0]);
     
-    NSLog(@"Object name in array: %@", _annotations[0]);
-    
+    // vamos
     [self gotoLocation];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    //    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(47.67958, -122.387661);
-    //    MKCLAnnotation *pin = [[MKCLAnnotation alloc] initWithCoordinates:coord placeName:@"Title" description:@"Subtitle"];
-    
-}
-
 - (void)gotoLocation{
+    
     MKCoordinateRegion region;
+    // starting region is Code Fellows
     region.center.latitude = 47.623543;
     region.center.longitude = -122.335812;
-    region.span.latitudeDelta = 0.112872;
-    region.span.longitudeDelta = 0.109863;
-    
-    [_mapView setRegion:region animated:YES];
+    region.span.latitudeDelta = 0.02;
+    region.span.longitudeDelta = 0.02;
+    [mapView removeAnnotations:mapView.annotations];
+    [mapView addAnnotation:_startLocation];
+    titleLabel.text = _startLocation.title;
+    [mapView setRegion:region animated:YES];
 }
 
 #pragma mark - Button actions
@@ -62,16 +73,34 @@
     [self gotoLocation];
     
     // clear the map of all other annotations
-    [_mapView removeAnnotations:_mapView.annotations];
+    [mapView removeAnnotations:mapView.annotations];
     
     // create new annotation with anno at index of array
-    [_mapView addAnnotation:[_annotations objectAtIndex:index]];
+    MKCLAnnotation *tempAnno = [_annotations objectAtIndex:index];
+    titleLabel.text = tempAnno.title;
+    [mapView addAnnotation:tempAnno];
+    [mapView setCenterCoordinate:tempAnno.coordinate animated:YES];
 }
 
 - (IBAction)locationAction:(id)sender{
     
-    // only one item in array, go there
-    [self gotoAnnotationIndex:0];
+    // if there is still more to see on the tour, go
+    if (counter < [_annotations count]) {
+        [self gotoAnnotationIndex:counter];
+        counter++;
+    }
+    // otherwise startover
+    else {
+        counter = 0;
+        [self gotoAnnotationIndex:counter];
+    }
+    
+}
+
+- (IBAction)userLocationAction:(id)sender{
+    // return home
+    titleLabel.text = @"Welcome";
+    [self gotoLocation];
 }
 
 @end

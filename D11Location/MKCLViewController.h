@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MKCLAnnotation.h"
 
 @interface MKCLViewController : UIViewController <MKMapViewDelegate>
-
-@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) MKCLAnnotation *startLocation;
 @property (nonatomic, strong) NSMutableArray *annotations;
 
 @end
