@@ -21,6 +21,14 @@
 		3C5F2B3017F0DA5800B698E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5F2B1217F0DA5800B698E6 /* UIKit.framework */; };
 		3C5F2B3817F0DA5800B698E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C5F2B3617F0DA5800B698E6 /* InfoPlist.strings */; };
 		3C5F2B3A17F0DA5800B698E6 /* D11LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F2B3917F0DA5800B698E6 /* D11LocationTests.m */; };
+		3C5F2B4417F0DFA500B698E6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5F2B4317F0DFA500B698E6 /* MapKit.framework */; };
+		3C5F2B4617F0DFAD00B698E6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5F2B4517F0DFAD00B698E6 /* CoreLocation.framework */; };
+		3C5F2B4C17F0E16000B698E6 /* MKCLAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F2B4B17F0E16000B698E6 /* MKCLAnnotation.m */; };
+		3C5F2B5617F0F57800B698E6 /* near_me-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C5F2B5517F0F57800B698E6 /* near_me-25.png */; };
+		3C5F2B5817F0F58200B698E6 /* compas-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C5F2B5717F0F58200B698E6 /* compas-25.png */; };
+		3C5F2B5B17F0FA1800B698E6 /* MKCLAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F2B5A17F0FA1800B698E6 /* MKCLAnnotationView.m */; };
+		3C5F2B5E17F0FD6A00B698E6 /* MKCLMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F2B5D17F0FD6A00B698E6 /* MKCLMapItem.m */; };
+		3C5F2B6017F1067D00B698E6 /* location-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C5F2B5F17F1067D00B698E6 /* location-25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,17 @@
 		3C5F2B3517F0DA5800B698E6 /* D11LocationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "D11LocationTests-Info.plist"; sourceTree = "<group>"; };
 		3C5F2B3717F0DA5800B698E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C5F2B3917F0DA5800B698E6 /* D11LocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D11LocationTests.m; sourceTree = "<group>"; };
+		3C5F2B4317F0DFA500B698E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3C5F2B4517F0DFAD00B698E6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3C5F2B4A17F0E16000B698E6 /* MKCLAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCLAnnotation.h; sourceTree = "<group>"; };
+		3C5F2B4B17F0E16000B698E6 /* MKCLAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCLAnnotation.m; sourceTree = "<group>"; };
+		3C5F2B5517F0F57800B698E6 /* near_me-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "near_me-25.png"; sourceTree = "<group>"; };
+		3C5F2B5717F0F58200B698E6 /* compas-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compas-25.png"; sourceTree = "<group>"; };
+		3C5F2B5917F0FA1800B698E6 /* MKCLAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCLAnnotationView.h; sourceTree = "<group>"; };
+		3C5F2B5A17F0FA1800B698E6 /* MKCLAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCLAnnotationView.m; sourceTree = "<group>"; };
+		3C5F2B5C17F0FD6A00B698E6 /* MKCLMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCLMapItem.h; sourceTree = "<group>"; };
+		3C5F2B5D17F0FD6A00B698E6 /* MKCLMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCLMapItem.m; sourceTree = "<group>"; };
+		3C5F2B5F17F1067D00B698E6 /* location-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-25.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C5F2B4617F0DFAD00B698E6 /* CoreLocation.framework in Frameworks */,
+				3C5F2B4417F0DFA500B698E6 /* MapKit.framework in Frameworks */,
 				3C5F2B1117F0DA5800B698E6 /* CoreGraphics.framework in Frameworks */,
 				3C5F2B1317F0DA5800B698E6 /* UIKit.framework in Frameworks */,
 				3C5F2B0F17F0DA5800B698E6 /* Foundation.framework in Frameworks */,
@@ -101,6 +122,8 @@
 		3C5F2B0D17F0DA5800B698E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C5F2B4517F0DFAD00B698E6 /* CoreLocation.framework */,
+				3C5F2B4317F0DFA500B698E6 /* MapKit.framework */,
 				3C5F2B0E17F0DA5800B698E6 /* Foundation.framework */,
 				3C5F2B1017F0DA5800B698E6 /* CoreGraphics.framework */,
 				3C5F2B1217F0DA5800B698E6 /* UIKit.framework */,
@@ -112,9 +135,18 @@
 		3C5F2B1417F0DA5800B698E6 /* D11Location */ = {
 			isa = PBXGroup;
 			children = (
+				3C5F2B5517F0F57800B698E6 /* near_me-25.png */,
+				3C5F2B5717F0F58200B698E6 /* compas-25.png */,
 				3C5F2B1D17F0DA5800B698E6 /* MKCLAppDelegate.h */,
 				3C5F2B1E17F0DA5800B698E6 /* MKCLAppDelegate.m */,
 				3C5F2B2017F0DA5800B698E6 /* Main.storyboard */,
+				3C5F2B5F17F1067D00B698E6 /* location-25.png */,
+				3C5F2B4A17F0E16000B698E6 /* MKCLAnnotation.h */,
+				3C5F2B4B17F0E16000B698E6 /* MKCLAnnotation.m */,
+				3C5F2B5917F0FA1800B698E6 /* MKCLAnnotationView.h */,
+				3C5F2B5A17F0FA1800B698E6 /* MKCLAnnotationView.m */,
+				3C5F2B5C17F0FD6A00B698E6 /* MKCLMapItem.h */,
+				3C5F2B5D17F0FD6A00B698E6 /* MKCLMapItem.m */,
 				3C5F2B2317F0DA5800B698E6 /* MKCLViewController.h */,
 				3C5F2B2417F0DA5800B698E6 /* MKCLViewController.m */,
 				3C5F2B2617F0DA5800B698E6 /* Images.xcassets */,
@@ -229,7 +261,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C5F2B5617F0F57800B698E6 /* near_me-25.png in Resources */,
+				3C5F2B6017F1067D00B698E6 /* location-25.png in Resources */,
 				3C5F2B2717F0DA5800B698E6 /* Images.xcassets in Resources */,
+				3C5F2B5817F0F58200B698E6 /* compas-25.png in Resources */,
 				3C5F2B1917F0DA5800B698E6 /* InfoPlist.strings in Resources */,
 				3C5F2B2217F0DA5800B698E6 /* Main.storyboard in Resources */,
 			);
@@ -250,7 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C5F2B5E17F0FD6A00B698E6 /* MKCLMapItem.m in Sources */,
 				3C5F2B1B17F0DA5800B698E6 /* main.m in Sources */,
+				3C5F2B5B17F0FA1800B698E6 /* MKCLAnnotationView.m in Sources */,
+				3C5F2B4C17F0E16000B698E6 /* MKCLAnnotation.m in Sources */,
 				3C5F2B1F17F0DA5800B698E6 /* MKCLAppDelegate.m in Sources */,
 				3C5F2B2517F0DA5800B698E6 /* MKCLViewController.m in Sources */,
 			);
